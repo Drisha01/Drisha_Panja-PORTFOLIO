@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Drisha Panja — Creative Web Developer & UI/UX Designer from Kolkata." />
+  <title>Drisha Panja · Creative Developer & Designer</title>
+
+  <!-- Fonts: Bebas Neue (display) + Cabinet Grotesk (body) + DM Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════
+       LOADER
+  ══════════════════════════════════════════ -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-content">
+      <div class="loader-name">DRISHA PANJA</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <div class="loader-counter"><span id="loaderNum">0</span>%</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       CURSOR
+  ══════════════════════════════════════════ -->
+  <div id="cursorDot" aria-hidden="true"></div>
+  <div id="cursorRing" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════
+       SCROLL PROGRESS
+  ══════════════════════════════════════════ -->
+  <div id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand" aria-label="Drisha Panja home">
+        Drisha
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#works" class="nl">Works</a></li>
+        <li><a href="#about" class="nl">About</a></li>
+        <li><a href="#skills" class="nl">Skills</a></li>
+        <li><a href="#contact" class="nl">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button id="themeBtn" class="theme-btn" aria-label="Toggle theme">
+          <span class="t-sun">☀</span>
+          <span class="t-moon">◑</span>
+        </button>
+        <a href="#contact" class="nav-cta">Hire Me</a>
+        <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="nav-drawer" id="navDrawer" aria-hidden="true">
+      <ul>
+        <li><a href="#works" class="drawer-link">Works</a></li>
+        <li><a href="#about" class="drawer-link">About</a></li>
+        <li><a href="#skills" class="drawer-link">Skills</a></li>
+        <li><a href="#contact" class="drawer-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section id="hero" class="hero">
+
+    <!-- Full-bleed background: grain + noise layer -->
+    <div class="hero-bg" aria-hidden="true">
+      <canvas id="noiseCanvas"></canvas>
+    </div>
+
+    <!-- Large ghost text -->
+    <div class="hero-ghost" aria-hidden="true">PORTFOLIO</div>
+
+
+    <!-- Portrait silhouette -->
+    <div class="hero-portrait" aria-hidden="true">
+      <div class="hero-portrait" aria-hidden="true">
+        <div class="hero-img-box">
+          <!-- Glow -->
+          <div class="img-glow"></div>
+          <!-- --Image-- -->
+          <img src="img/portfolio-image.png" alt="Loaded Image" class="hero-img">
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero text content -->
+    <div class="hero-content">
+      <p class="hero-eyebrow">
+        <span class="eye-line"></span>
+        Based in Kolkata, West Bengal, India
+      </p>
+
+      <h1 class="hero-heading">
+        <span class="hline hline-1">Drisha</span>
+        <span class="hline hline-2">Panja</span>
+      </h1>
+
+      <div class="hero-foot">
+        <p class="hero-desc">
+          I create <strong>unconventional</strong> yet functional &amp; visually<br>
+          pleasing interfaces for the mobile and web.
+        </p>
+        <a href="#works" class="hero-scroll-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 5v14m0 0l-6-6m6 6l6-6" />
+          </svg>
+          Scroll
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       MARQUEE TICKER
+  ══════════════════════════════════════════ -->
+  <div class="marquee-band" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="mi">HTML5 <b>✦</b></span>
+      <span class="mi">CSS3 <b>✦</b></span>
+      <span class="mi">JavaScript <b>✦</b></span>
+      <span class="mi">Figma <b>✦</b></span>
+      <span class="mi">Bootstrap <b>✦</b></span>
+      <span class="mi">Tailwind CSS <b>✦</b></span>
+      <span class="mi">Photoshop <b>✦</b></span>
+      <span class="mi">Illustrator <b>✦</b></span>
+      <span class="mi">jQuery <b>✦</b></span>
+      <!-- duplicate for seamless loop -->
+      <span class="mi">HTML5 <b>✦</b></span>
+      <span class="mi">CSS3 <b>✦</b></span>
+      <span class="mi">JavaScript <b>✦</b></span>
+      <span class="mi">Figma <b>✦</b></span>
+      <span class="mi">Bootstrap <b>✦</b></span>
+      <span class="mi">Tailwind CSS <b>✦</b></span>
+      <span class="mi">Photoshop <b>✦</b></span>
+      <span class="mi">Illustrator <b>✦</b></span>
+      <span class="mi">jQuery <b>✦</b></span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════════ -->
+  <section id="about" class="about sec-pad">
+    <div class="container">
+      <div class="sec-tag rv">About Me</div>
+      <h2 class="sec-title rv">About <span class="out">Me</span></h2>
+
+      <div class="row g-4 g-lg-5 align-items-start">
+        <!-- Portrait card -->
+        <div class="col-lg-5 about-portrait-wrap rv d-none d-lg-flex justify-content-center">
+          <div class="about-portrait-card">
+            <div class="apc-inner">
+              <img src="img/portfolio-3.png" alt="Loaded Image">
+            </div>
+            <div class="apc-badge">
+              <span class="apc-dot"></span> Available for Work
+            </div>
+          </div>
+        </div>
+
+        <!-- Text content -->
+        <div class="col-lg-7 about-content rv">
+          <h3 class="about-lead">
+            A passionate designer
+            <em>with a knack for creating</em>
+            memorable user experiences.
+          </h3>
+          <p class="about-body">
+            I'm <strong>Drisha Panja</strong>, a web developer and UI/UX designer from <strong>Kolkata,
+              India</strong>. I thrive at the intersection of clean code and thoughtful design — bringing ideas to life
+            that are both beautiful and functional.
+          </p>
+          <p class="about-body">
+            With a background in graphic design, I bring a design-first approach to every project.
+          </p>
+
+          <div class="about-btns">
+            <a href="#contact" class="btn-primary">Let's Talk ↗</a>
+            <a href="#works" class="btn-ghost">View Works</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       WORKS / PROJECTS
+  ══════════════════════════════════════════ -->
+  <section id="works" class="works sec-pad">
+    <div class="container">
+
+      <div class="works-head rv row align-items-end gy-3">
+        <div class="col-lg-6 left-head">
+          <div class="sec-tag">Featured Works</div>
+          <h2 class="works-big-title">
+            PROJECT
+            <span class="outline-text">WORKS</span>
+          </h2>
+        </div>
+        <div class="col-lg-6">
+          <p class="works-sub mb-0 text-lg-end">A selection of projects that reflect my craft across web development and
+            UI/UX design.</p>
+        </div>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="filter-row rv d-flex flex-wrap gap-2" role="tablist">
+        <!-- <button class="ftab active" data-f="all" role="tab" aria-selected="true">All</button> -->
+        <button class="ftab" data-f="web" role="tab" aria-selected="false">Web Dev</button>
+        <!-- <button class="ftab" data-f="ui" role="tab" aria-selected="false">UI/UX</button>
+        <button class="ftab" data-f="design" role="tab" aria-selected="false">Graphic</button> -->
+      </div>
+
+      <!-- ── WORKS GRID ── 3-col, rows grouped per category ── -->
+      <div class="works-grid-v2" id="worksGrid">
+
+        <div class="works-cat-sep" data-sep="web">Web Development</div>
+        <!-- ══ WEB DEV — Row 1 (3 cards) ══ -->
+        <article class="wcard rv" data-cat="web">
+          <div class="wcard-img wi-1">
+            <div class="wcard-mock">
+              <div class="mock-portfolio">
+                <div class="mp-nav">
+                  <div class="mp-dot"></div>
+                  <div class="mp-dot"></div>
+                  <div class="mp-dot"></div>
+                </div>
+                <!-- TITLE CHANGE -->
+                <div class="mp-title">
+                  WEATHER<br>APP
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- LABEL CHANGE -->
+          <div class="wcard-label">
+            <div class="wcl-inner">
+              <div class="wcl-arrow">↗</div>
+              Weather Website
+            </div>
+          </div>
+          <div class="wcard-overlay">
+            <div class="wco-top">
+              <span class="wco-cat">Web Dev</span>
+            </div>
+            <div class="wco-bot">
+              <div>
+                <!-- NAME CHANGE -->
+                <h3 class="wco-name">Weathixor</h3>
+                <!-- TAGS CHANGE -->
+                <div class="wco-tags">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JS</span>
+                  <span>API</span>
+                </div>
+              </div>
+              <!-- MAIN LINK CHANGE -->
+              <a href="https://drisha01.github.io/Weather-Website/" class="wco-btn" target="_blank"
+                aria-label="View Weather Website">
+                ↗
+              </a>
+
+            </div>
+
+          </div>
+        </article>
+
+        <article class="wcard rv" data-cat="web">
+          <div class="wcard-img wi-2">
+            <div class="wcard-mock">
+              <div class="mock-portfolio">
+                <div class="mp-nav">
+                  <div class="mp-dot"></div>
+                  <div class="mp-dot"></div>
+                  <div class="mp-dot"></div>
+                </div>
+                <!-- TITLE CHANGE -->
+                <div class="mp-title">
+                  CALCULATOR
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- LABEL CHANGE -->
+          <div class="wcard-label">
+            <div class="wcl-inner">
+              <div class="wcl-arrow">↗</div>
+              Calculate Website
+            </div>
+          </div>
+          <div class="wcard-overlay">
+            <div class="wco-top">
+              <span class="wco-cat">Web Dev</span>
+            </div>
+            <div class="wco-bot">
+              <div>
+                <!-- NAME CHANGE -->
+                <h3 class="wco-name">CALC-PRO</h3>
+                <!-- TAGS CHANGE -->
+                <div class="wco-tags">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JS</span>
+                  <span>Enhance with AI</span>
+                </div>
+              </div>
+              <!-- MAIN LINK CHANGE -->
+              <a href="https://drisha01.github.io/CALC-PRO/" class="wco-btn" target="_blank"
+                aria-label="View Weather Website">
+                ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="wcard rv" data-cat="web">
+          <div class="wcard-img wi-3">
+            <div class="wcard-mock">
+              <div class="mock-portfolio">
+                <div class="mp-nav">
+                  <div class="mp-dot"></div>
+                  <div class="mp-dot"></div>
+                  <div class="mp-dot"></div>
+                </div>
+                <!-- TITLE CHANGE -->
+                <div class="mp-title">
+                  ZOMATO<br>CLONE
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- LABEL CHANGE -->
+          <div class="wcard-label">
+            <div class="wcl-inner">
+              <div class="wcl-arrow">↗</div>
+              Zomato Landing Page Clone
+            </div>
+          </div>
+          <div class="wcard-overlay">
+            <div class="wco-top">
+              <span class="wco-cat">Web Dev</span>
+            </div>
+            <div class="wco-bot">
+              <div>
+                <!-- NAME CHANGE -->
+                <h3 class="wco-name">Zomato Clone</h3>
+                <!-- TAGS CHANGE -->
+                <div class="wco-tags">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JS</span>
+                  <span>Responsive</span>
+                </div>
+              </div>
+              <!-- MAIN LINK CHANGE -->
+              <a href="https://drisha01.github.io/Zomato-Landing-page-Clone/" class="wco-btn" target="_blank"
+                aria-label="View Weather Website">
+                ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- <div class="works-cat-sep" data-sep="ui">UI / UX Design</div> -->
+        <!-- ══ UI/UX — Row 1 (3 cards) ══ -->
+        <!-- <article class="wcard rv" data-cat="ui">
+          <div class="wcard-img wi-4">
+            <div class="wcard-mock">
+              <div class="mock-dash">
+                <div class="mdrow">
+                  <div class="mdr green"></div>
+                  <div class="mdr" style="width:55%"></div>
+                </div>
+                <div class="mdrow">
+                  <div class="mdr w45"></div>
+                  <div class="mdr blue" style="width:40%"></div>
+                </div>
+                <div class="mdrow">
+                  <div class="mdr" style="width:70%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wcard-label">
+            <div class="wcl-inner">
+              <div class="wcl-arrow">↗</div>Finance Dashboard
+            </div>
+          </div>
+          <div class="wcard-overlay">
+            <div class="wco-top"><span class="wco-cat">UI/UX</span></div>
+            <div class="wco-bot">
+              <div>
+                <h3 class="wco-name">Finance Dashboard</h3>
+                <div class="wco-tags"><span>Figma</span><span>Dashboard</span><span>Data Viz</span></div>
+              </div>
+              <a href="#" class="wco-btn" aria-label="View Finance Dashboard">↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="wcard rv" data-cat="ui">
+          <div class="wcard-img wi-5">
+            <div class="wcard-mock">
+              <div class="mock-phone">
+                <div class="mpscreen">
+                  <div class="mpbar green"></div>
+                  <div class="mpbar w70"></div>
+                  <div class="mpbar w45"></div>
+                  <div class="mpbar short"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wcard-label">
+            <div class="wcl-inner">
+              <div class="wcl-arrow">↗</div>Mobile App UI
+            </div>
+          </div>
+          <div class="wcard-overlay">
+            <div class="wco-top"><span class="wco-cat">UI/UX</span></div>
+            <div class="wco-bot">
+              <div>
+                <h3 class="wco-name">Mobile App UI</h3>
+                <div class="wco-tags"><span>Figma</span><span>Prototype</span><span>UX</span></div>
+              </div>
+              <a href="#" class="wco-btn" aria-label="View Mobile App UI">↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="wcard rv" data-cat="ui">
+          <div class="wcard-img wi-6">
+            <div class="wcard-mock">
+              <div class="mock-shop">
+                <div class="ms-grid">
+                  <div class="ms-item amber"></div>
+                  <div class="ms-item"></div>
+                  <div class="ms-item"></div>
+                  <div class="ms-item amber"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wcard-label">
+            <div class="wcl-inner">
+              <div class="wcl-arrow">↗</div>Shop Redesign
+            </div>
+          </div>
+          <div class="wcard-overlay">
+            <div class="wco-top"><span class="wco-cat">UI/UX</span></div>
+            <div class="wco-bot">
+              <div>
+                <h3 class="wco-name">Shop Redesign</h3>
+                <div class="wco-tags"><span>Figma</span><span>Components</span><span>UX</span></div>
+              </div>
+              <a href="#" class="wco-btn" aria-label="View Shop Redesign">↗</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="works-cat-sep" data-sep="design">Graphic Design</div> -->
+        <!-- ══ GRAPHIC — Row 1 (3 cards) ══ -->
+        <!-- <article class="wcard rv" data-cat="design">
+          <div class="wcard-img wi-3">
+            <div class="wcard-mock">
+              <div class="mock-brand">
+                <div class="mb-logo">Bx</div>
+                <div class="mb-bars">
+                  <div class="mb-b red"></div>
+                  <div class="mb-b"></div>
+                  <div class="mb-b"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wcard-label">
+            <div class="wcl-inner">
+              <div class="wcl-arrow">↗</div>Brand Identity
+            </div>
+          </div>
+          <div class="wcard-overlay">
+            <div class="wco-top"><span class="wco-cat">Graphic</span></div>
+            <div class="wco-bot">
+              <div>
+                <h3 class="wco-name">Brand Identity</h3>
+                <div class="wco-tags"><span>Illustrator</span><span>Branding</span><span>Logo</span></div>
+              </div>
+              <a href="#" class="wco-btn" aria-label="View Brand Identity">↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="wcard rv" data-cat="design">
+          <div class="wcard-img wi-6">
+            <div class="wcard-mock">
+              <div class="mock-brand">
+                <div class="mb-logo" style="color:var(--purple)">Mg</div>
+                <div class="mb-bars">
+                  <div class="mb-b" style="background:var(--purple)"></div>
+                  <div class="mb-b"></div>
+                  <div class="mb-b" style="width:70%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wcard-label">
+            <div class="wcl-inner">
+              <div class="wcl-arrow">↗</div>Magazine Layout
+            </div>
+          </div>
+          <div class="wcard-overlay">
+            <div class="wco-top"><span class="wco-cat">Graphic</span></div>
+            <div class="wco-bot">
+              <div>
+                <h3 class="wco-name">Magazine Layout</h3>
+                <div class="wco-tags"><span>Photoshop</span><span>Print</span><span>Typography</span></div>
+              </div>
+              <a href="#" class="wco-btn" aria-label="View Magazine Layout">↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="wcard rv" data-cat="design">
+          <div class="wcard-img wi-4">
+            <div class="wcard-mock">
+              <div class="mock-brand">
+                <div class="mb-logo" style="color:var(--amber)">Pk</div>
+                <div class="mb-bars">
+                  <div class="mb-b" style="background:var(--amber)"></div>
+                  <div class="mb-b"></div>
+                  <div class="mb-b" style="width:55%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wcard-label">
+            <div class="wcl-inner">
+              <div class="wcl-arrow">↗</div>Packaging Design
+            </div>
+          </div>
+          <div class="wcard-overlay">
+            <div class="wco-top"><span class="wco-cat">Graphic</span></div>
+            <div class="wco-bot">
+              <div>
+                <h3 class="wco-name">Packaging Design</h3>
+                <div class="wco-tags"><span>Illustrator</span><span>Mockup</span><span>Print</span></div>
+              </div>
+              <a href="#" class="wco-btn" aria-label="View Packaging Design">↗</a>
+            </div>
+          </div>
+        </article> -->
+
+        <!-- ══ GRAPHIC — Row 2 (3 cards) ══ -->
+        <!-- <article class="wcard rv" data-cat="design">
+          <div class="wcard-img wi-1">
+            <div class="wcard-mock">
+              <div class="mock-dash">
+                <div class="mdrow">
+                  <div class="mdr green"></div>
+                  <div class="mdr" style="width:60%"></div>
+                </div>
+                <div class="mdrow">
+                  <div class="mdr" style="width:80%"></div>
+                </div>
+                <div class="mdrow">
+                  <div class="mdr w45"></div>
+                  <div class="mdr blue" style="width:35%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wcard-label">
+            <div class="wcl-inner">
+              <div class="wcl-arrow">↗</div>Poster Series
+            </div>
+          </div>
+          <div class="wcard-overlay">
+            <div class="wco-top"><span class="wco-cat">Graphic</span></div>
+            <div class="wco-bot">
+              <div>
+                <h3 class="wco-name">Poster Series</h3>
+                <div class="wco-tags"><span>Photoshop</span><span>Poster</span><span>Art Direction</span></div>
+              </div>
+              <a href="#" class="wco-btn" aria-label="View Poster Series">↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="wcard rv" data-cat="design">
+          <div class="wcard-img wi-2">
+            <div class="wcard-mock">
+              <div class="mock-brand">
+                <div class="mb-logo" style="color:var(--blue)">Ic</div>
+                <div class="mb-bars">
+                  <div class="mb-b" style="background:var(--blue)"></div>
+                  <div class="mb-b"></div>
+                  <div class="mb-b" style="width:65%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wcard-label">
+            <div class="wcl-inner">
+              <div class="wcl-arrow">↗</div>Icon Set
+            </div>
+          </div>
+          <div class="wcard-overlay">
+            <div class="wco-top"><span class="wco-cat">Graphic</span></div>
+            <div class="wco-bot">
+              <div>
+                <h3 class="wco-name">Icon Set</h3>
+                <div class="wco-tags"><span>Illustrator</span><span>Icons</span><span>SVG</span></div>
+              </div>
+              <a href="#" class="wco-btn" aria-label="View Icon Set">↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="wcard rv" data-cat="design">
+          <div class="wcard-img wi-5">
+            <div class="wcard-mock">
+              <div class="mock-portfolio">
+                <div class="mp-nav">
+                  <div class="mp-dot"></div>
+                  <div class="mp-dot"></div>
+                </div>
+                <div class="mp-title">SOCIAL<br>KIT</div>
+              </div>
+            </div>
+          </div>
+          <div class="wcard-label">
+            <div class="wcl-inner">
+              <div class="wcl-arrow">↗</div>Social Media Kit
+            </div>
+          </div>
+          <div class="wcard-overlay">
+            <div class="wco-top"><span class="wco-cat">Graphic</span></div>
+            <div class="wco-bot">
+              <div>
+                <h3 class="wco-name">Social Media Kit</h3>
+                <div class="wco-tags"><span>Canva</span><span>Photoshop</span><span>Branding</span></div>
+              </div>
+              <a href="#" class="wco-btn" aria-label="View Social Media Kit">↗</a>
+            </div>
+          </div>
+        </article>
+
+      </div> -->
+        <!-- /works-grid-v2 -->
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SKILLS
+  ══════════════════════════════════════════ -->
+  <section id="skills" class="skills sec-pad">
+    <div class="container">
+      <div class="sec-tag rv">My Toolkit</div>
+      <h2 class="sec-title rv">Skills <span class="out">&amp;</span> Tools</h2>
+
+      <div class="row g-4 g-xl-5 align-items-start">
+
+        <!-- Left: bar list (video style - large typographic rows) -->
+        <div class="col-lg-6 skill-rows rv">
+          <div class="skrow" data-skill="HTML5" data-pct="95">
+            <span class="skname">HTML5</span>
+            <div class="skright">
+              <div class="skbar">
+                <div class="skfill" style="--p:95%"></div>
+              </div>
+              <span class="skpct">95%</span>
+            </div>
+          </div>
+          <div class="skrow" data-skill="CSS3" data-pct="92">
+            <span class="skname">CSS3</span>
+            <div class="skright">
+              <div class="skbar">
+                <div class="skfill" style="--p:92%"></div>
+              </div>
+              <span class="skpct">92%</span>
+            </div>
+          </div>
+          <div class="skrow" data-skill="JavaScript" data-pct="85">
+            <span class="skname">JavaScript</span>
+            <div class="skright">
+              <div class="skbar">
+                <div class="skfill" style="--p:85%"></div>
+              </div>
+              <span class="skpct">85%</span>
+            </div>
+          </div>
+          <div class="skrow" data-skill="Bootstrap" data-pct="88">
+            <span class="skname">Bootstrap</span>
+            <div class="skright">
+              <div class="skbar">
+                <div class="skfill" style="--p:88%"></div>
+              </div>
+              <span class="skpct">88%</span>
+            </div>
+          </div>
+          <div class="skrow" data-skill="Tailwind" data-pct="80">
+            <span class="skname">Tailwind CSS</span>
+            <div class="skright">
+              <div class="skbar">
+                <div class="skfill" style="--p:80%"></div>
+              </div>
+              <span class="skpct">80%</span>
+            </div>
+          </div>
+          <div class="skrow" data-skill="jQuery" data-pct="82">
+            <span class="skname">jQuery</span>
+            <div class="skright">
+              <div class="skbar">
+                <div class="skfill" style="--p:82%"></div>
+              </div>
+              <span class="skpct">82%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: design tool cards -->
+        <div class="col-lg-6 tool-cards rv">
+          <div class="tc">
+            <div class="tc-ico ps-ico">Ps</div>
+            <div class="tc-info">
+              <strong>Adobe Photoshop</strong>
+              <span>Advanced · 87%</span>
+              <div class="tc-bar">
+                <div style="width:87%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tc">
+            <div class="tc-ico ai-ico">Ai</div>
+            <div class="tc-info">
+              <strong>Adobe Illustrator</strong>
+              <span>Advanced · 83%</span>
+              <div class="tc-bar">
+                <div style="width:83%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tc">
+            <div class="tc-ico fg-ico">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <path
+                  d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.354-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.02s1.354 3.019 3.019 3.019h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.026-4.49 4.515-4.49c2.49 0 4.515 2.014 4.515 4.49S10.661 24 8.172 24zm0-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019 3.019-1.355 3.019-3.019-1.354-3.019-3.019-3.019zm7.856-0.471h-0.001c-2.445 0-4.515-2.014-4.515-4.49s2.07-4.49 4.515-4.49c2.445 0 4.515 2.014 4.515 4.49s-2.07 4.49-4.514 4.49zm0-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019h.001c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.02-3.019z" />
+              </svg>
+            </div>
+            <div class="tc-info">
+              <strong>Figma</strong>
+              <span>Expert · 90%</span>
+              <div class="tc-bar">
+                <div style="width:90%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tc">
+            <div class="tc-ico ux-ico">UX</div>
+            <div class="tc-info">
+              <strong>UI/UX Design</strong>
+              <span>Expert · 91%</span>
+              <div class="tc-bar">
+                <div style="width:91%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ══════════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════════ -->
+  <section id="contact" class="contact sec-pad">
+    <div class="container">
+      <div class="sec-tag rv">Get In Touch</div>
+      <h2 class="sec-title rv">Let's Work<br /><span class="out">Together</span></h2>
+
+      <div class="row g-5 align-items-start">
+
+        <!-- Left info -->
+        <div class="col-lg-5 contact-info rv">
+          <p class="contact-big">
+            Have a project<br />in mind?<br /><em>Let's talk.</em>
+          </p>
+          <div class="cinfo-list">
+            <div class="ci-row">
+              <span class="ci-label">Email</span>
+              <a href="mailto:drishapanja019@gmail.com" class="ci-val">drishapanja019@gmail.com</a>
+            </div>
+            <div class="ci-row">
+              <span class="ci-label">Location</span>
+              <span class="ci-val">Kolkata, West Bengal, India</span>
+            </div>
+          </div>
+          <div class="social-row">
+            <a href="https://github.com/Drisha01" class="soc-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/drishapanja/" class="soc-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div class="col-lg-7">
+          <form class="contact-form rv" id="contactForm" novalidate aria-label="Contact form">
+            <div class="mb-3 fg">
+              <label class="form-label" for="fName">Full Name</label>
+              <input type="text" class="form-control" id="fName" name="name" placeholder="Your full name" required
+                autocomplete="name" />
+              <span class="ferr" id="eNm" role="alert"></span>
+            </div>
+            <div class="mb-3 fg">
+              <label class="form-label" for="fEmail">Email Address</label>
+              <input type="email" class="form-control" id="fEmail" name="email" placeholder="your@email.com" required
+                autocomplete="email" />
+              <span class="ferr" id="eEm" role="alert"></span>
+            </div>
+            <div class="mb-3 fg">
+              <label class="form-label" for="fSub">Subject</label>
+              <input type="text" class="form-control" id="fSub" name="subject"
+                placeholder="Project inquiry / Collaboration" required />
+              <span class="ferr" id="eSb" role="alert"></span>
+            </div>
+            <div class="mb-3 fg">
+              <label class="form-label" for="fMsg">Message</label>
+              <textarea class="form-control" id="fMsg" name="message" rows="5" placeholder="Tell me about your project…"
+                required></textarea>
+              <span class="ferr" id="eMg" role="alert"></span>
+            </div>
+            <button type="submit" class="btn-primary">
+              <span class="btn-text">Send Message</span>
+            </button>
+            <div class="form-ok" id="formOk" hidden role="alert">
+              ✓ Message sent! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© <span id="fYear"></span> Drisha Panja. All rights reserved.</span>
+        <span>Made with HTML · CSS · JavaScript ♥</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="btt" class="btt" aria-label="Back to top" hidden>↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
