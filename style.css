@@ -579,12 +579,9 @@ textarea {
 
 .hero-img-box {
   position: absolute;
-
   width: 450px;
   height: 520px;
-
   margin: auto;
-
   display: flex;
   justify-content: right;
   align-items: center;
@@ -615,7 +612,6 @@ textarea {
 .hero-img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
 
   border: 8px solid rgba(255, 255, 255, 0.12);
