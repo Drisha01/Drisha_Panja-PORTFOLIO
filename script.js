@@ -462,6 +462,8 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
    20. PARALLAX — hero portrait + pills
 ══════════════════════════════════════════ */
 (function initParallax() {
+  if (window.matchMedia('(max-width: 768px)').matches) return;
+
   const portrait = document.querySelector('.hero-portrait');
   const pills = document.querySelectorAll('.pill');
   const ghost = document.querySelector('.hero-ghost');
