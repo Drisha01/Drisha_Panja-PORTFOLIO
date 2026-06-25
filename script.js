@@ -3,6 +3,10 @@
    Style: Editorial Bold Dark · SAN Life Design inspired
    ============================================================ */
 
+emailjs.init({
+  publicKey: "uWZv58RBgHOTrGmsh",
+});
+
 'use strict';
 
 /* ══════════════════════════════════════════
@@ -304,7 +308,7 @@ function revealHero() {
 (function initFilter() {
   const tabs = document.querySelectorAll('.ftab');
   const cards = document.querySelectorAll('#worksGrid .wcard');
-  const seps  = document.querySelectorAll('.works-cat-sep');
+  const seps = document.querySelectorAll('.works-cat-sep');
 
   function showCards(filter) {
     // Handle separators
@@ -376,6 +380,10 @@ function revealHero() {
     return !msg;
   }
 
+
+
+
+
   // Real-time feedback
   fields.forEach(f => {
     const inp = form.querySelector(f.input);
@@ -383,26 +391,56 @@ function revealHero() {
     inp.addEventListener('input', () => { if (inp.classList.contains('err')) validate(f); });
   });
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', function (e) {
+
     e.preventDefault();
+
     const allValid = fields.map(validate).every(Boolean);
+
     if (!allValid) return;
 
     const btn = form.querySelector('.btn-primary');
     const btnText = btn.querySelector('.btn-text');
-    btn.disabled = true;
-    btnText.textContent = 'Sending…';
 
-    // Simulate async send (replace with real fetch/AJAX)
-    setTimeout(() => {
-      form.reset();
-      btn.disabled = false;
-      btnText.textContent = 'Send Message';
-      const ok = document.getElementById('formOk');
-      ok.hidden = false;
-      setTimeout(() => { ok.hidden = true; }, 5000);
-    }, 1600);
+    btn.disabled = true;
+    btnText.textContent = 'Sending...';
+
+    emailjs.sendForm(
+      "service_dv6y88b",
+      "template_jbzh7iq",
+      form
+    )
+
+      .then(() => {
+
+        form.reset();
+
+        btn.disabled = false;
+        btnText.textContent = 'Send Message';
+
+        const ok = document.getElementById('formOk');
+
+        ok.hidden = false;
+
+        setTimeout(() => {
+          ok.hidden = true;
+        }, 5000);
+
+      })
+
+      .catch((error) => {
+
+        btn.disabled = false;
+        btnText.textContent = 'Send Message';
+
+        console.log("EMAILJS ERROR:", error);
+
+        alert(JSON.stringify(error));
+
+      });
+
   });
+
 })();
 
 /* ══════════════════════════════════════════
