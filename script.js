@@ -36,6 +36,7 @@ emailjs.init({
   });
 })();
 
+
 /* ══════════════════════════════════════════
    2. CUSTOM CURSOR
 ══════════════════════════════════════════ */
@@ -571,3 +572,32 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 console.log('%c✦ DRISHA PANJA', 'font-family:monospace;font-size:1.4rem;font-weight:bold;color:#3ddc84');
 console.log('%cCreative Developer & Designer · Kolkata', 'font-family:monospace;font-size:.85rem;color:#7a7975');
 console.log('%cHTML · CSS · JavaScript · Figma · Photoshop · Illustrator', 'font-family:monospace;font-size:.75rem;color:#4d7cff');
+
+
+
+
+
+
+
+
+// GRAPHIC.JS CODE -----------------------------------------------------------------------------
+
+const tags = document.querySelectorAll(".hero-tags span");
+
+tags.forEach(tag=>{
+
+    tag.addEventListener("mouseenter",()=>{
+
+        tag.style.letterSpacing=".08em";
+
+    });
+
+    tag.addEventListener("mouseleave",()=>{
+
+        tag.style.letterSpacing="0";
+
+    });
+
+});
+
+
