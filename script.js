@@ -145,24 +145,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 /* ══════════════════════════════════════════
-   6. DARK / LIGHT THEME TOGGLE
-══════════════════════════════════════════ */
-(function initTheme() {
-  const btn = document.getElementById('themeBtn');
-  const html = document.documentElement;
-  const saved = localStorage.getItem('dp-theme') || 'dark';
-  html.setAttribute('data-theme', saved);
-  html.setAttribute('data-bs-theme', saved);
-
-  btn.addEventListener('click', () => {
-    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    html.setAttribute('data-bs-theme', next);
-    localStorage.setItem('dp-theme', next);
-  });
-})();
-
-/* ══════════════════════════════════════════
    7. NOISE CANVAS (hero texture)
 ══════════════════════════════════════════ */
 (function initNoise() {
